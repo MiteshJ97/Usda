@@ -49,7 +49,7 @@ MIDDLEWARE = [
 
 
 # Root URL file path
-ROOT_URLCONF = 'nal_library_conf.urls'
+ROOT_URLCONF = 'nalLibraryConf.urls'
 
 
 
@@ -76,7 +76,7 @@ TEMPLATES = [
 
 
 # Project interface
-WSGI_APPLICATION = 'nal_library_conf.wsgi.application'
+WSGI_APPLICATION = 'nalLibraryConf.wsgi.application'
 
 
 
