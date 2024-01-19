@@ -1,7 +1,7 @@
 """
 Django settings for nal_library project
 """
-
+import ftplib
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -156,3 +156,11 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# FTP Settings variables
+# ##################################################
+HOSTNAME = "192.168.152.132"
+USERNAME = "admin"
+PASSWORD = "admin"
+# ##################################################
