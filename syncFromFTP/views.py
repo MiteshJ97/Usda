@@ -10,6 +10,7 @@ from rest_framework.decorators import api_view
 import time
 
 
+@api_view(['GET'])
 def connectWithFTP():
     try:
         # Connect FTP Server
@@ -32,10 +33,11 @@ def connectWithFTP():
         
         # Close the Connection
         connect.quit()
-        return True
+        return Response("File pulled from FTP successfullt")
     
     except Exception as e:
-        return Response(e)
+        print("######################################")
+        return Response("Error occured while pulling the content from the FTP. Error : ", e)
     
 
 

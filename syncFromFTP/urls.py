@@ -6,6 +6,6 @@ router = DefaultRouter()
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('welcome', connectWithFTP),
+    path('connect-with-ftp', connectWithFTP),
     path('dry-run', dryRunSteps),
 ]
