@@ -123,6 +123,7 @@ def action(inputfile, outputfile):
 def dryRunSteps(request):
     print("############################### Executing step 1 #################################")
     outputFileName = action('test.txt', 'outputTest.txt')
+    delete_file('test.txt')
     print("############################### step 1 is over #################################")
 
     print("############################### Executing step 2 #################################")
