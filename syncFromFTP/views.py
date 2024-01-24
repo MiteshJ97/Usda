@@ -2,7 +2,6 @@ import ftplib
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
-# import xml element tree 
 import os
 import xml.etree.ElementTree as ET 
 from rest_framework.response import Response
@@ -11,7 +10,7 @@ import time
 
 
 @api_view(['GET'])
-def connectWithFTP():
+def connect_with_ftp(request):
     try:
         # Connect FTP Server
         connect = ftplib.FTP(settings.HOSTNAME, settings.USERNAME, settings.PASSWORD)
@@ -36,8 +35,7 @@ def connectWithFTP():
         return Response("File pulled from FTP successfullt")
     
     except Exception as e:
-        print("######################################")
-        return Response("Error occured while pulling the content from the FTP. Error : ", e)
+        return Response(f'''Error occured while pulling the content from the FTP. Error : {e}''')
     
 
 
@@ -120,7 +118,7 @@ def action(inputfile, outputfile):
 
 # function based view to get the file
 @api_view(['GET'])
-def dryRunSteps(request):
+def dry_run_steps(request):
     print("############################### Executing step 1 #################################")
     outputFileName = action('test.txt', 'outputTest.txt')
     delete_file('test.txt')
