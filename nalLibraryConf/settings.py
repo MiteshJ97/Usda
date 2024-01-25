@@ -21,7 +21,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-# ########################################################################
+# ..................######
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,10 +31,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
 ]
-# #########################################################################
+# ..................#######
 
 # Middlewares to be used in this project
-# ###############################################################################
+# ..................#############
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -44,7 +44,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-# ###############################################################################
+# ..................#############
 
 
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'nalLibraryConf.urls'
 
 
 # Template for serving the result
-# #################################################################################
+# ..................###############
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -72,7 +72,7 @@ TEMPLATES = [
         },
     },
 ]
-# #######################################################################################
+# ..................#####################
 
 
 
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'nalLibraryConf.wsgi.application'
 
 
 # Database settings
-# #######################################################################################
+# ..................#####################
 DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.mysql',
@@ -95,13 +95,13 @@ DATABASES = {
     }
 }
 
-# #######################################################################################
+# ..................#####################
 
 
 
 
 # Default Django password validations
-# #########################################################################################
+# ..................#######################
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-# ####################################################################################
+# ..................##################
 
 
 
@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Rest framework authentication
 # This settings is for preventing the endpoints from unauthorised access.
-# ##################################################################################
+# ..................################
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [
 #         'rest_framework.authentication.TokenAuthentication',
@@ -133,13 +133,13 @@ AUTH_PASSWORD_VALIDATORS = [
 #         'rest_framework.permissions.IsAuthenticated',
 #     ),
 # }
-# ####################################################################################
+# ..................##################
 
 
 
 
 # Internationalization
-# ######################################################
+# .........#####################
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -148,7 +148,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-# ######################################################
+# .........#####################
 
 
 
@@ -160,8 +160,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # FTP Settings variables
-# ##################################################
+# .........#################
 HOSTNAME = "192.168.152.132"
 USERNAME = "admin"
 PASSWORD = "admin"
-# ##################################################
+# .........#################
