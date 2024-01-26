@@ -20,5 +20,5 @@ from django.urls import include, path
 # URL configurations
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('syncFromFTP.urls'))
+    path('', include('actions.urls'))
 ]

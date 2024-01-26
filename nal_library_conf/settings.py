@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'actions'
 ]
 # ..................#######
 
@@ -50,7 +51,7 @@ MIDDLEWARE = [
 
 
 # Root URL file path
-ROOT_URLCONF = 'nalLibraryConf.urls'
+ROOT_URLCONF = 'nal_library_conf.urls'
 
 
 
@@ -77,7 +78,7 @@ TEMPLATES = [
 
 
 # Project interface
-WSGI_APPLICATION = 'nalLibraryConf.wsgi.application'
+WSGI_APPLICATION = 'nal_library_conf.wsgi.application'
 
 
 
