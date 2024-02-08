@@ -1,6 +1,9 @@
 from django.db import models
 from django.core.files.storage import FileSystemStorage
 import os
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.serializers import ModelSerializer
+from datetime import datetime
 
 
 # choices to be used for status of article attributs
@@ -10,8 +13,9 @@ CHOICES= (
     ('failed', 'failed')
 )
 
-# class to remove the exisiting file.
-# This will be used when downloading same file again or another file with same name
+
+# Class to remove the existing file.
+# This will be used when we need to replace the existing file that is stored with the same name.
 class OverWriteStorage(FileSystemStorage):
     def get_replace_or_create_file(self, name, max_length=None):
         if self.exists(name):
@@ -20,8 +24,13 @@ class OverWriteStorage(FileSystemStorage):
 
 
 # Function to return the storage file path.
+# This function will return file path as article_library/Current_year/Current_month/day/file_name_with_extension
+# Any downloaded file will be stored like this.
+# http://localhost:8000/article_library/2024/2/8/resume.pdf
+        
 def get_file_path(instance, filename):
-    return 'article_library_{0}/{1}'.format(instance.name, filename)
+    return 'article_library/{0}/{1}/{2}/{3}'.format(datetime.today().year, datetime.today().month,datetime.today().day, filename)
+
 
 
 # Model to record logs of downloaded files/folders from FTP/SFTP's
@@ -31,9 +40,24 @@ class Archived_artical_attribute(models.Model):
     location = models.TextField()
     received_on = models.DateTimeField(auto_now_add=True)
     processed_on = models.DateTimeField(null=True)
-    status = models.CharField(max_lenght="10", choices=CHOICES)
-    notes = models.TextField(defult="N/A")
+    status = models.CharField(max_length=12, choices=CHOICES)
+    notes = models.TextField(default="N/A")
 
 
     def __str__(self) -> str:
         return self.provider
+    
+
+# serializer for Archived_artical_attribute model
+class Archived_artical_attribute_serializers(ModelSerializer):
+    class Meta:
+        model = Archived_artical_attribute
+        fields = '__all__'
+
+
+# views for Archived_artical_attribute
+class Archived_artical_attribute_view(ModelViewSet):
+    queryset = Archived_artical_attribute.objects.all()
+    serializer_class = Archived_artical_attribute_serializers
+
+
