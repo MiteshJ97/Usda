@@ -154,7 +154,13 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static',]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'article_library'
+UPLOAD_ROOT = BASE_DIR / 'uploads'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
