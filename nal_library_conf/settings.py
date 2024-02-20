@@ -172,3 +172,49 @@ HOSTNAME = "192.168.152.132"
 USERNAME = "admin"
 PASSWORD = "admin"
 # .........#################
+
+
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'logfile': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': "NAL_LIBRARY_SYSTEM.log",
+            'maxBytes': 100000,
+            'backupCount': 2,
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['logfile'],
+            # DEBUG: Low-level system information
+            # INFO: General system information
+            # WARNING: Minor problems related information
+            # ERROR: Major problems related information
+            # CRITICAL: Critical problems related information
+            # here we will log only error and critical (greater than error level)
+            'level' : 'ERROR',
+            'propagate': True,
+        },
+        'apps': {
+            'handlers': ['logfile'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}

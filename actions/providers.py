@@ -2,7 +2,8 @@ from django.db import models
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.serializers import ModelSerializer
 from django.contrib.auth.hashers import make_password
-
+import logging
+logger = logging.getLogger(__name__)
 
 # choices to be used for status of article attributs
 CHOICES= (
@@ -37,6 +38,8 @@ class Provider_meta_data_FTP(models.Model):
     password = models.CharField(max_length=50)
     last_pull_time = models.DateTimeField(auto_now=True)
     pull_switch = models.BooleanField()
+    last_pull_status = models.CharField(max_length=10, default="pass")
+    next_due_date = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
         self.password = make_password(self.password)
@@ -51,6 +54,9 @@ class Provider_meta_data_API(models.Model):
     last_pull_time = models.DateTimeField(auto_now=True)
     api_switch = models.BooleanField()
     site_token = models.TextField()
+
+    last_pull_status = models.CharField(max_length=10, default="pass")
+    next_due_date = models.DateTimeField(null=True)
 
     def save(self, *args, **kwargs):
         self.site_token = make_password(self.site_token)
