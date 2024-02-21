@@ -49,8 +49,8 @@ class Provider_meta_data_FTP(models.Model):
 class Provider_meta_data_API(models.Model):
     provider = models.ForeignKey(Provider_model, related_name="api_provider", on_delete=models.CASCADE)    
     base_url = models.URLField()
-    indentifier_code = models.CharField(max_length=50)
-    indentifier_type = models.CharField(max_length=50)
+    identifier_code = models.CharField(max_length=50)
+    identifier_type = models.CharField(max_length=50)
     last_pull_time = models.DateTimeField(auto_now=True)
     api_switch = models.BooleanField()
     site_token = models.TextField()

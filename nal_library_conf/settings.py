@@ -90,7 +90,7 @@ DATABASES = {
     'ENGINE': 'django.db.backends.mysql',
     'NAME': 'usda',
     'USER':'root',
-    'PASSWORD':'admin',
+    'PASSWORD':'Ravi@123',
     'HOST':'localhost',
     'PORT':'3306',
     }
@@ -168,7 +168,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # FTP Settings variables
 # .........#################
-HOSTNAME = "192.168.152.132"
+HOSTNAME = ""
 USERNAME = "admin"
 PASSWORD = "admin"
 # .........#################
