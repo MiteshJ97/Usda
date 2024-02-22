@@ -30,7 +30,7 @@ class Provider_model(models.Model):
 
 
 class Provider_meta_data_FTP(models.Model):
-    provider = models.ForeignKey(Provider_model, related_name="fpt_provider", on_delete=models.CASCADE)
+    provider = models.ForeignKey(Provider_model, related_name="ftp_provider", on_delete=models.CASCADE)
     server = models.URLField()
     protocol = models.CharField(max_length=10)
     site_path = models.CharField(max_length=50)

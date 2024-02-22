@@ -13,9 +13,3 @@ def timer(func):
         return value
 
     return wrapper
-
-
-# @timer
-# def doubled_and_add(num):
-#     res = sum([i*2 for i in range(num)])
-#     print("Result : {}".format(res))

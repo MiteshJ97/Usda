@@ -35,29 +35,3 @@ def connect_with_ftp(request):
     
     except Exception as e:
         return Response(f'''Error occured while pulling the content from the FTP. Error : {e}''')
-    
-
-
-# This function is required to read the xml file
-def readXML(filename):
-    # reading xml file , file name is vignan.xml 
-    tree = ET.parse(filename) 
-    
-    # in our xml file student is the root for all  
-    # student data. 
-    data2 = tree.findall('Article') 
-    
-    # retrieving the data and insert into table 
-    # i value for xml data #j value printing number of  
-    # values that are stored 
-    for i, j in zip(data2, range(1, 6)): 
-        publisherName = i.find('PublisherName').text 
-        journalTitle = i.find('JournalTitle').text 
-        issn = i.find('Issn').text 
-        volume = i.find('Volume').text 
-        issue = i.find('Issue').text 
-
-        pubdate = tree.findall('PubDate')
-        for k in zip(pubdate, range(1,9)):
-            year = k.find('Year').text 
-            month = k.find('Month').text
