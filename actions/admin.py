@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .archive_article import Archived_artical_attribute
+from .archive_article import Archived_article_attribute
 
 
 # Register your models here.
 
-@admin.register(Archived_artical_attribute)
-class Archived_artical_attribute_admin(admin.ModelAdmin):
+@admin.register(Archived_article_attribute)
+class Archived_article_attribute_admin(admin.ModelAdmin):
     # fields = ["name", "title"]
     # exclude = ["birth_date"]
     pass

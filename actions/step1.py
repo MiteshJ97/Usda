@@ -8,7 +8,7 @@ import os
 import xml.etree.ElementTree as ET 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .archive_article import Archived_artical_attribute
+from .archive_article import Archived_article_attribute
 from .providers import Provider_model
 import datetime
 
