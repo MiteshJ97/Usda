@@ -45,9 +45,9 @@ def start_step1(request):
             article_library = os.listdir(item.site_path)
             for article in article_library:
                 with open(article, "wb") as file:
-                    if not (Archived_artical_attribute.objects.filter(file_name=article).exists()):
+                    if not (Archived_article_attribute.objects.filter(file_name=article).exists()):
                         x = connect.retrbinary(f"RETR {article}", file.write)
-                        Archived_artical_attribute.objects.create(
+                        Archived_article_attribute.objects.create(
                             provider = item.provider_address,
                             file_name = x,
                             processed_on = datetime.datetime.now(),
@@ -59,7 +59,7 @@ def start_step1(request):
                 item.next_due_date = datetime.datetime.now() + datetime.timedelta(item.provider__minimum_delivery_fq)
                 item.save()
         except:
-            Archived_artical_attribute.objects.create(
+            Archived_article_attribute.objects.create(
                 provider = item.provider_address,
                 processed_on = datetime.datetime.now(),
                 status = 'failed',
