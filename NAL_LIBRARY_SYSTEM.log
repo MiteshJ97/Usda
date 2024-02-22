@@ -1,0 +1,45 @@
+ERROR 2024-02-21 20:35:47,868 log 22904 2212 Internal Server Error: /connect-with-ftp
+Traceback (most recent call last):
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2024-02-21 20:35:47,877 basehttp 22904 2212 "GET /connect-with-ftp HTTP/1.1" 500 92523
+ERROR 2024-02-21 20:36:38,902 log 22904 2212 Internal Server Error: /connect-with-ftp
+Traceback (most recent call last):
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2024-02-21 20:36:38,906 basehttp 22904 2212 "GET /connect-with-ftp HTTP/1.1" 500 92523
+ERROR 2024-02-21 20:49:41,823 log 19912 25376 Internal Server Error: /connect-with-ftp
+Traceback (most recent call last):
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\django\template\response.py", line 111, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "e:\NAL-USDA\NAL_LIBRARY_SYSTEM\env\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2024-02-21 20:49:41,827 basehttp 19912 25376 "GET /connect-with-ftp HTTP/1.1" 500 92523

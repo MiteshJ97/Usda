@@ -6,6 +6,7 @@ from rest_framework.serializers import ModelSerializer
 from datetime import datetime
 
 from nal_library_conf.settings import UPLOAD_ROOT
+from rest_framework.decorators import api_view
 
 
 # choices to be used for status of article attributs
@@ -67,5 +68,6 @@ class Archived_artical_attribute_serializers(ModelSerializer):
 class Archived_artical_attribute_view(ModelViewSet):
     queryset = Archived_artical_attribute.objects.all()
     serializer_class = Archived_artical_attribute_serializers
+
 
 

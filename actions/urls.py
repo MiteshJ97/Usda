@@ -10,6 +10,7 @@ router = DefaultRouter()
 router.register('archive-article', Archived_artical_attribute_view)
 router.register('providers-ftp', Provider_meta_data_FTP_viewset)
 router.register('providers-api', Provider_meta_data_API_viewset)
+router.register('providers', Provider_viewset)
 
 urlpatterns = [
     path('', include(router.urls)),
