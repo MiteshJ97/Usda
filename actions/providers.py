@@ -31,7 +31,7 @@ class Provider_model(models.Model):
 
 class Provider_meta_data_FTP(models.Model):
     provider = models.ForeignKey(Provider_model, related_name="ftp_provider", on_delete=models.CASCADE)
-    server = models.URLField()
+    server = models.TextField()
     protocol = models.CharField(max_length=10)
     site_path = models.CharField(max_length=50)
     account = models.CharField(max_length=50)
@@ -41,9 +41,10 @@ class Provider_meta_data_FTP(models.Model):
     last_pull_status = models.CharField(max_length=10, default="pass")
     next_due_date = models.DateTimeField(null=True)
 
-    def save(self, *args, **kwargs):
-        self.password = make_password(self.password)
-        super(Provider_meta_data_FTP, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     self.password = make_password(self.password)
+    #     print(self.password)
+    #     super(Provider_meta_data_FTP, self).save(*args, **kwargs)
 
 
 class Provider_meta_data_API(models.Model):
@@ -58,9 +59,9 @@ class Provider_meta_data_API(models.Model):
     last_pull_status = models.CharField(max_length=10, default="pass")
     next_due_date = models.DateTimeField(null=True)
 
-    def save(self, *args, **kwargs):
-        self.site_token = make_password(self.site_token)
-        super(Provider_meta_data_API, self).save(*args, **kwargs)        
+    # def save(self, *args, **kwargs):
+    #     self.site_token = make_password(self.site_token)
+    #     super(Provider_meta_data_API, self).save(*args, **kwargs)        
 
 
 

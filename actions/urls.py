@@ -16,5 +16,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('connect-with-ftp', connect_with_ftp),
     path('dry-run', trigger_steps),
-    path('step1', start_step1)
+    path('step1/', start_step1)
 ]
