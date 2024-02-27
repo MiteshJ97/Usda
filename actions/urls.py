@@ -4,7 +4,7 @@ from .ftp import connect_with_ftp
 from .trigger_processes import trigger_steps
 from .archive_article import Archived_article_attribute_view
 from .providers import Provider_viewset, Provider_meta_data_FTP_viewset, Provider_meta_data_API_viewset
-from .step1 import start_step1
+from .step1 import download_from_ftp, download_from_api
 
 router = DefaultRouter()
 router.register('archive-article', Archived_article_attribute_view)
@@ -16,5 +16,6 @@ urlpatterns = [
     path('', include(router.urls)),
     path('connect-with-ftp', connect_with_ftp),
     path('dry-run', trigger_steps),
-    path('step1/', start_step1)
+    path('download-from-ftp/', download_from_ftp),
+    path('download-from-api/', download_from_api)
 ]

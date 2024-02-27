@@ -2,6 +2,7 @@ from django.db import models
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.serializers import ModelSerializer
 from django.contrib.auth.hashers import make_password
+from datetime import datetime, timedelta
 import logging
 logger = logging.getLogger(__name__)
 
@@ -41,10 +42,10 @@ class Provider_meta_data_FTP(models.Model):
     last_pull_status = models.CharField(max_length=10, default="pass")
     next_due_date = models.DateTimeField(null=True)
 
-    # def save(self, *args, **kwargs):
-    #     self.password = make_password(self.password)
-    #     print(self.password)
-    #     super(Provider_meta_data_FTP, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        # self.password = make_password(self.password)
+        self.next_due_date = datetime.today() + timedelta(self.provider.minimum_delivery_fq)
+        super(Provider_meta_data_FTP, self).save(*args, **kwargs)
 
 
 class Provider_meta_data_API(models.Model):
@@ -59,9 +60,10 @@ class Provider_meta_data_API(models.Model):
     last_pull_status = models.CharField(max_length=10, default="pass")
     next_due_date = models.DateTimeField(null=True)
 
-    # def save(self, *args, **kwargs):
-    #     self.site_token = make_password(self.site_token)
-    #     super(Provider_meta_data_API, self).save(*args, **kwargs)        
+    def save(self, *args, **kwargs):
+        # self.site_token = make_password(self.site_token)
+        self.next_due_date = datetime.today() + timedelta(self.provider.minimum_delivery_fq)
+        super(Provider_meta_data_API, self).save(*args, **kwargs)        
 
 
 
