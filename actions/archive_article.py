@@ -46,8 +46,10 @@ def get_file_path(instance, filename):
 # Model to record logs of downloaded files/folders from FTP/SFTP's
 class Archived_article_attribute(models.Model):
     provider = models.URLField()
-    file_name = models.FileField(upload_to=get_file_path, blank=True, null=True, storage=OverWriteStorage())
+    file_content = models.FileField(upload_to=get_file_path, blank=True, null=True, storage=OverWriteStorage())
     file_name_on_ftp = models.CharField(max_length=500)
+    file_size = models.BigIntegerField(default=0)
+    file_type = models.CharField(max_length=20)
     received_on = models.DateTimeField(auto_now_add=True)
     processed_on = models.DateTimeField(null=True)
     status = models.CharField(max_length=12, choices=CHOICES)
