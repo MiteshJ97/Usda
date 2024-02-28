@@ -36,7 +36,6 @@ def download_file(connect, article, item):
 
 # function to iterate folder. If another folder found in side the folder this function will call itself.
 def download_folder(connect, article, item):
-    os.makedirs(os.path.join(article, article), exist_ok=True)
     connect.cwd(article)
     filenames = connect.nlst()
     for filename in filenames:
