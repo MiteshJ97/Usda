@@ -64,7 +64,7 @@ def download_from_ftp(request):
         # try to connect to FTP, if error occures update the record
         try:
             connect = ftplib.FTP(item.server)
-            connect.login(item.account, item.password)
+            connect.login(item.account, item.pswd)
         except Exception as e:
             item.last_pull_time = datetime.datetime.today()
             item.last_pull_status = 'failed'
